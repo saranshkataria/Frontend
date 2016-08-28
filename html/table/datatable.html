@@ -325,13 +325,17 @@
     <!-- Javascript -->
     <script type="text/javascript" src="../../js/app.js"></script>
     <script type="text/javascript">
-    $(document).ready(){
+    $(document).ready(function(){
 
         var check= document.getElementsByClassName('hiddenth');
         $(check).click(function(){
-            
+            var val=[]
+            $(check).getElementsByTagName('input').click().each(function(){
+                val=val+this.getValue();
+                console.log(val);
+            });
         });
-    }
+    });
     </script>
 </body>
 
