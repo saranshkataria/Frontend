@@ -6,8 +6,15 @@
 }
 body {
   font-family: 'Source Sans Pro', sans-serif;
-  color: white;
+  /*color: white;*/
   font-weight: 300;
+  /*background: #50a3a2;*/
+  /*background-color: red;*/
+  /*background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);*/
+  /*background: linear-gradient(#50a3a2 0%, #53e3a6 100%);*/
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 body ::-webkit-input-placeholder {
   /* WebKit browsers */
@@ -36,29 +43,33 @@ body :-ms-input-placeholder {
   font-weight: 300;
 }
 .wrapper {
-  background: #50a3a2;
-  background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
-  background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
   position: absolute;
-  top: 50%;
   left: 0;
+  bottom: 0;
   width: 100%;
-  height: 400px;
-  margin-top: -200px;
+  height: 100%;
   overflow: hidden;
 }
+
+.wrapper .panel.panel-default {
+  margin-top: 70px;
+}
+
+.wrapper .panel.panel-default .panel-body {
+  /*padding-top: 10px;*/
+}
+
+.wrapper .panel.panel-default .panel-body h1 {
+  margin-top: 2px;
+  margin-bottom: 10px;
+}
+
 .wrapper.form-success .container h1 {
   -webkit-transform: translateY(85px);
           transform: translateY(85px);
 }
-.container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 80px 0;
-  height: 400px;
-  text-align: center;
-}
-.container h1 {
+
+.wrapper h1 {
   font-size: 40px;
   -webkit-transition-duration: 1s;
           transition-duration: 1s;
@@ -103,10 +114,10 @@ form button {
      -moz-appearance: none;
           appearance: none;
   outline: 0;
-  background-color: white;
+  background-color: #3B5998;
   border: 0;
   padding: 10px 15px;
-  color: #53e3a6;
+  color: #fff;
   border-radius: 3px;
   width: 250px;
   cursor: pointer;
@@ -115,7 +126,14 @@ form button {
           transition-duration: 0.25s;
 }
 form button:hover {
-  background-color: #f5f7f9;
+}
+form button strong {
+  font-weight: bold;
+}
+form button#fb-login-button i.fa-facebook-official {
+  display: inline-block;
+  padding-right: 10px;
+  font-size: 20px;
 }
 .bg-bubbles {
   position: absolute;
@@ -225,5 +243,14 @@ form button:hover {
   100% {
     -webkit-transform: translateY(-700px) rotate(600deg);
             transform: translateY(-700px) rotate(600deg);
+  }
+}
+
+
+
+/*Media Queries*/
+@media only screen and (max-width: 480px) {
+  .card.hoverable {
+    margin-top: 15px !important;
   }
 }
